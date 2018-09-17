@@ -1,7 +1,7 @@
 module.exports = {
   Query: {
     reservation: (obj, { id }, { db }) => db.Reservations.findById(id),
-    reservations: (obj, args, { db }) => db.Reservations.getAll()
+    reservations: (obj, args, { db }) => db.Reservations.findAll()
   },
   Mutation: {
     createReservation: (obj, { name, hotelName, arrivalDate, departureDate }, { db }) => {

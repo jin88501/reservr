@@ -1,30 +1,26 @@
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
-
 const db = require('reservr-repository')
 
-const resolvers = require('./resolvers')
+const addRestEndpoints = require('./resolvers/rest')
+const resolvers = require('./resolvers/graphql')
 const requireGraphQL = require('./utilities/require-graphql-node')
 
-const Schema = requireGraphQL.require('reservr-domain/entities/reservations/reservations')
-const typeDefs = gql(Schema);
-const context = async () => ({ db })
-const mock = false
-
-const server = new ApolloServer({ 
-  typeDefs: gql(Schema),
+const apollo = new ApolloServer({ 
+  typeDefs: gql(requireGraphQL.require('reservr-domain/entities/reservations/reservations')),
   resolvers,
-  context,
-  mock 
+  context: async () => ({ db }),
+  mock: false
 });
 
 const app = express();
-server.applyMiddleware({ app });
+apollo.applyMiddleware({ app });
+addRestEndpoints(app, db)
 
 app.listen({ port: 4000 }, () =>
   console.log(`
   
-  🚀 Server ready at http://localhost:4000${server.graphqlPath}
-  
+  🚀 Server ready at http://localhost:4000${apollo.graphqlPath}
+
 `),
 );
