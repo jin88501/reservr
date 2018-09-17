@@ -1,0 +1,26 @@
+type Reservation {
+  id: Int!
+  name: String,
+  hotelName: String,
+  arrivalDate: String,
+  departureDate: String
+}
+
+type Query {
+  reservation(id: Int): Reservation,
+  reservations: [Reservation]
+}
+
+type Mutation {
+  createReservation(
+    name: String,
+    hotelName: String,
+    arrivalDate: String,
+    departureDate: String
+  ): Int
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

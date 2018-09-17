@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "repository": "git@github.com:sartaj/reservr.git",
+  "scripts": {
+    "gateway": "cd packages/reservr-gateway && yarn start"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^2.5.1"
+  }
+}
