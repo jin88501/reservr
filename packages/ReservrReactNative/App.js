@@ -1,6 +1,6 @@
 /* @flow */
 
-import ReservationsViewer from 'reservr-reservations-scene'
+import ReservationsViewer from 'reservr-react-reservations-scene'
 
 /**
  * TODO: If more scenes are added to this app,

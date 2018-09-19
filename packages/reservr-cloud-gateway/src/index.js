@@ -1,6 +1,6 @@
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
-const db = require('reservr-repository')
+const db = require('reservr-cloud-repository')
 
 const addRestEndpoints = require('./resolvers/rest')
 const resolvers = require('./resolvers/graphql')
@@ -22,5 +22,5 @@ app.listen({ port: 4000 }, () =>
   
   🚀 Server ready at http://localhost:4000${apollo.graphqlPath}
 
-`),
+ `),
 );

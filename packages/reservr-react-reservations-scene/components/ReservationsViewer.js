@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import { compose, pure, branch, renderComponent, mapProps } from 'recompose';
 
 import { FullScreenScrollView, CardView, Loading, Text } from 'reservr-react';
-import type { Reservation } from 'reservr-domain/types/types.flow'
+import type { Reservation } from 'reservr-domain/entities/reservations/types.flow'
 
 const cloudQuery = compose(
   graphql(gql`

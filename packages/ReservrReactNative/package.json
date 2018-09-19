@@ -12,7 +12,7 @@
     "react-native": "0.52.2",
     "reservr-domain": "1.0.0",
     "reservr-react": "^1.0.0",
-    "reservr-reservations-scene": "^0.0.1"
+    "reservr-react-reservations-scene": "^0.0.1"
   },
   "devDependencies": {
     "babel-jest": "22.1.0",

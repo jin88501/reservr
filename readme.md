@@ -10,16 +10,12 @@ yarn
 
 Start the server first, then run the respective simulator.
 
-### Server
-
 ```bash
-yarn gateway
+yarn dev:cloud
 ```
 
-### iOS Simulator
-
 ```bash
-yarn run:ios
+yarn dev:ios
 ```
 
 ### Packages
@@ -52,6 +48,8 @@ React Native app with client logic.
 
 ### React Native
 
+- [x] iOS Support
+- [ ] Android Support
 - [x] Apollo Client
 - [x] Recompose Integration (for functional state management)
 - [x] Flow Types
@@ -62,6 +60,7 @@ React Native app with client logic.
 - [ ] Styling Updates
 - [ ] Brand Assets Update
 
-#### DevOps
+#### Chores
 
 - [x] Monorepo Setup With React Native + Node
+- [ ] Update Docs

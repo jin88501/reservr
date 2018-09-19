@@ -1,5 +1,5 @@
 {
-  "name": "reservr-gateway",
+  "name": "reservr-cloud-gateway",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -20,7 +20,7 @@
     "ramda": "^0.25.0",
     "require-graphql": "^1.0.0",
     "reservr-domain": "1.0.0",
-    "reservr-repository": "^1.0.0",
+    "reservr-cloud-repository": "^1.0.0",
     "resolve": "^1.8.1"
   }
 }

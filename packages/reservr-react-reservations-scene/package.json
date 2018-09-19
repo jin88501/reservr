@@ -1,12 +1,8 @@
 {
-  "name": "reservr-reservations-scene",
+  "name": "reservr-react-reservations-scene",
   "version": "0.0.1",
   "private": true,
   "main": "index.js",
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
-  },
   "dependencies": {
     "apollo-boost": "^0.1.16",
     "graphql": "^14.0.2",
