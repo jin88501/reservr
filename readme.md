@@ -57,7 +57,7 @@ React Native app with client logic.
 - [x] Flow Types
 - [x] Reservations Results Screen
 - [ ] Reservation Submission Screen
-- [ ] Decouple Core Components to Separate Module
+- [x] Decouple Core Components to Separate Modules
 - [ ] Transition Animations
 - [ ] Styling Updates
 - [ ] Brand Assets Update
