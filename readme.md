@@ -54,10 +54,10 @@ React Native app with client logic.
 - [x] Recompose Integration (for functional state management)
 - [x] Flow Types
 - [x] Reservations Results Screen
-- [ ] Reservation Submission Screen
+- [x] Add Reservation Screen
+- [ ] Add Reservations Update DB and UI
 - [x] Decouple Core Components to Separate Modules
 - [ ] Transition Animations
-- [ ] Styling Updates
 - [ ] Brand Assets Update
 
 #### Chores
