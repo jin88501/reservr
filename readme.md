@@ -59,6 +59,7 @@ This application attempts to follow the following principles:
 - **Interface Focused Abstractions**: Try to design around minimally leaky abstractions. This way, it is easier to change internals later. For example, even though `reservr-gateway` doesn't yet proxy to other microservices, by having apps point to the gateway, it becomes easier for server devs to optimize on their own accord.
 - **Use Functions + Higher Order Components**: Almost this entire app is written with functional components (using recompose).
 - **Use Generic UI Components When Piping Business Logic**: Scene modules, where UI meets other side effects like GraphQL, should only contain UI components that are generic by nature, thus making it easier to update the design system later.
+- **Separate Complext React Components**: While this is already done with `reservr-react-reservations-scene`, this logic can be applied to other complex components, like complex Graphs and Tables. By keeping complex components with complex props out of `reservr-react`, `reservr-react` can have a longer shelf life.
 - **Unify Modules With Basic Domain Knowledge**: `reserver-domain` contains general business logic. As such, it is imported by most modules within this code base. Currently, it has types and graphql definitions. But it can also be expanded to include brand styles and functional reducers for interacting with different data structures.
 
 ## Progress
