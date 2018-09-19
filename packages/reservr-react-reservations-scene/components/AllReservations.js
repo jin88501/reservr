@@ -58,10 +58,13 @@ const SearchResultCard = ({
   </CardView>
 )
 
-export const SearchResults = ({ reservations }: Reservation) => 
-  reservations.map(SearchResultCard)
-
-export const withReservationsLoader = compose(
+const withReservationsData = compose(
   cloudQuery,
   onlyUpdateForKeys(['reservations']),
 )
+
+const AllReservations = withReservationsData(({ reservations }: Reservation) => 
+  reservations.map(SearchResultCard)
+)
+
+export default AllReservations

@@ -15,6 +15,12 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     paddingTop: 15,
   },
+  FullScreenScrollViewContainer: {
+    flex: 1,
+    margin: 0,
+    width: Dimensions.get('window').width,
+    paddingTop: 15,
+  },
   CardViewContainer: {
     flex: 1,
     flexDirection: 'row',
@@ -34,11 +40,9 @@ const styles = StyleSheet.create({
 });
 
 export const FullScreenScrollView = ({ children = [], style = [] }: ReusableHOCProps) => (
-  <View style={[styles.FullScreenViewContainer, ...style]}>
-    <ScrollView>
-      {children}
-    </ScrollView>
-  </View>
+  <ScrollView style={[styles.FullScreenScrollViewContainer, ...style]}>
+    {children}
+  </ScrollView>
 )
 
 export const FullScreenView = ({ children = [], style = [] }: ReusableHOCProps) => (

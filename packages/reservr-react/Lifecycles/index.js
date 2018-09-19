@@ -1,6 +1,6 @@
 /* @flow */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { compose,  branch, lifecycle, renderComponent } from 'recompose'
 
 import type { ReusableHOCProps } from '../types'
@@ -23,5 +23,16 @@ export const onError = message => compose(
   branch(props => props.error, renderComponent(ErrorView)),
 )
 
-export const LoadingView = () => <FullScreenView><Text.h1>Loading...</Text.h1></FullScreenView>
-
+export const LoadingView = () => (
+  <Fragment>
+    <CardView>
+      <Text.h3 />
+    </CardView>
+    <CardView>
+      <Text.h3 />
+    </CardView>
+    <CardView>
+      <Text.h3 />
+    </CardView>
+  </Fragment>
+)

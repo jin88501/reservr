@@ -7,23 +7,22 @@ import { FullScreenScrollView } from 'reservr-react'
 import { GraphQLUrl } from './config'
 
 import AddReservation from './components/AddReservation'
-import { withReservationsLoader, SearchResults } from './components/ReservationsViewer'
+import AllReservations from './components/AllReservations'
+import { FullScreenView } from 'reservr-react/Views';
 
 const client = new ApolloClient({
   uri: GraphQLUrl
 });
 
-const Main = withReservationsLoader(({ reservations }) =>
-  <FullScreenScrollView>
-    <AddReservation />
-    <SearchResults reservations={ reservations } />
-  </FullScreenScrollView>
-)
-
 type Props = {};
 const App = (props: Props) =>
   <ApolloProvider client={client}>
-    <Main />
+    <FullScreenView>
+      <FullScreenScrollView>
+        <AddReservation />
+        <AllReservations />
+      </FullScreenScrollView>
+    </FullScreenView>
   </ApolloProvider>
 
 export default App
