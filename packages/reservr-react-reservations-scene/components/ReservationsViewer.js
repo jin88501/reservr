@@ -1,11 +1,28 @@
 /* @flow */
 
-import React, {Component} from 'react'
+import React, {Fragment} from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import { compose, branch, renderComponent, mapProps, onlyUpdateForKeys } from 'recompose'
+import {
+  compose,
+  branch,
+  renderComponent,
+  mapProps,
+  onlyUpdateForKeys,
+  withState,
+  withHandlers
+} from 'recompose'
 
-import { FullScreenScrollView, CardView, LoadingView, Text, onError } from 'reservr-react'
+import { 
+  FullScreenScrollView,
+  TopFormView,
+  CardView,
+  LoadingView,
+  Text,
+  Button,
+  onError,
+  TextInput
+} from 'reservr-react'
 import type { Reservation } from 'reservr-domain/entities/reservations/types.flow'
 
 const cloudQuery = compose(
@@ -41,15 +58,10 @@ const SearchResultCard = ({
   </CardView>
 )
 
-const SearchResults = ({ loading, reservations }: Reservation) => 
-  <FullScreenScrollView>
-      {reservations.map(SearchResultCard)}
-  </FullScreenScrollView>
+export const SearchResults = ({ reservations }: Reservation) => 
+  reservations.map(SearchResultCard)
 
-const ReservationsViewer = compose(
+export const withReservationsLoader = compose(
   cloudQuery,
   onlyUpdateForKeys(['reservations']),
-)(SearchResults)
-
-export default ReservationsViewer
-
+)

@@ -5,7 +5,7 @@ import { compose,  branch, lifecycle, renderComponent } from 'recompose'
 
 import type { ReusableHOCProps } from '../types'
 
-import { CardView, View } from '../Views';
+import { CardView, FullScreenView } from '../Views';
 import { Text } from '../Typography';
 
 const ErrorView = ({ message = 'Something went wrong.' }) => 
@@ -23,5 +23,5 @@ export const onError = message => compose(
   branch(props => props.error, renderComponent(ErrorView)),
 )
 
-export const LoadingView = () => <View><Text.p>Loading...</Text.p></View>
+export const LoadingView = () => <FullScreenView><Text.h1>Loading...</Text.h1></FullScreenView>
 
