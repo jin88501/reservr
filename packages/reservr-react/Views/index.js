@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { StyleSheet, View, ScrollView, Dimensions } from 'react-native';
+import { StatusBar, StyleSheet, View, ScrollView, Dimensions } from 'react-native';
 import { Text } from '../Typography'
 
 import type { ReusableHOCProps } from '../types'
@@ -14,20 +14,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.06)',
     margin: 0,
     width: Dimensions.get('window').width,
-    paddingTop: 15,
   },
   FullScreenScrollViewContainer: {
     flex: 1,
-    width: Dimensions.get('window').width,
-    paddingTop: 15,
+    width: Dimensions.get('window').width
   },
   CardViewContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
     padding: 10,
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 15,
+    marginRight: 15,
     marginBottom: 10,
     height: 65,
     backgroundColor: 'rgba(255,255,255, 1.0)'
@@ -42,8 +40,11 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   TopFormContainer: {
-    padding: 10,
-    margin: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 25,
+    paddingBottom: 10,
+    marginBottom: 10,
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -53,6 +54,7 @@ const styles = StyleSheet.create({
 
 export const FullScreenScrollView = ({ children = [], style = [] }: ReusableHOCProps) => (
   <ScrollView style={[styles.FullScreenScrollViewContainer, ...style]}>
+     <StatusBar translucent barStyle="light-content" />
     {children}
   </ScrollView>
 )

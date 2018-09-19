@@ -32,10 +32,10 @@ const TypographyStyles = StyleSheet.create({
 })
 
 export const Text = {
-  h1: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h1, ...style]}>{children}</RNText>,
-  h2: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h2, ...style]}>{children}</RNText>,
-  h3: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h3, ...style]}>{children}</RNText>,
-  h4: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h4, ...style]}>{children.toUpperCase()}</RNText>,
-  h5: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h5, ...style]}>{children.toUpperCase()}</RNText>,
-  p: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.p, ...style]}>{children}</RNText>,
+  h1: ({ style = [], children = [] }: ReusableHOCProps) => <RNText ellipsisMode={'tail'} numberOfLines={1} style={[TypographyStyles.h1, ...style]}>{children}</RNText>,
+  h2: ({ style = [], children = [] }: ReusableHOCProps) => <RNText ellipsisMode={'tail'} numberOfLines={1} style={[TypographyStyles.h2, ...style]}>{children}</RNText>,
+  h3: ({ style = [], children = [] }: ReusableHOCProps) => <RNText ellipsisMode={'tail'} numberOfLines={1} style={[TypographyStyles.h3, ...style]}>{children}</RNText>,
+  h4: ({ style = [], children = [] }: ReusableHOCProps) => <RNText ellipsisMode={'tail'} numberOfLines={1} style={[TypographyStyles.h4, ...style]}>{children.toUpperCase()}</RNText>,
+  h5: ({ style = [], children = [] }: ReusableHOCProps) => <RNText ellipsisMode={'tail'} numberOfLines={1} style={[TypographyStyles.h5, ...style]}>{children.toUpperCase()}</RNText>,
+  p: ({ style = [], children = [] }: ReusableHOCProps) => <RNText ellipsisMode={'tail'} numberOfLines={1} style={[TypographyStyles.p, ...style]}>{children}</RNText>,
 }
