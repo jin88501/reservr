@@ -8,15 +8,15 @@ import {
   branch,
   renderComponent,
   mapProps,
-  onlyUpdateForKeys,
-  withState,
-  withHandlers
+  lifecycle,
+  withProps,
+  onlyUpdateForKeys
 } from 'recompose'
 
 import { 
   FullScreenScrollView,
   TopFormView,
-  CardView,
+  TransparentCardView,
   EventCardView,
   LoadingView,
   Text,
@@ -24,9 +24,10 @@ import {
   onError,
   TextInput
 } from 'reservr-react'
+
 import type { Reservation } from 'reservr-domain/entities/reservations/types.flow'
 
-const cloudQuery = compose(
+const withReservationsData = compose(
   graphql(gql`
     query {
       reservations {
@@ -43,7 +44,17 @@ const cloudQuery = compose(
     props => props.data.loading,
     renderComponent(LoadingView),
   ),
-  mapProps(response => response.data)
+  withProps(response => response.data),
+  onlyUpdateForKeys(['reservations']),
+  branch(
+    ({ reservations }) => !reservations,
+    renderComponent(() => <TransparentCardView><Text.h2>Can't connect to server.</Text.h2></TransparentCardView>)
+  ),
+  lifecycle({
+    componentDidUpdate: ({ refetch }) => {
+      refetch()
+    }
+  })
 )
 
 const convertToDate = (unix) => {
@@ -65,11 +76,6 @@ const SearchResultCard = ({
     date1={convertToDate(arrivalDate)}
     date2={convertToDate(departureDate)}
   />
-)
-
-const withReservationsData = compose(
-  cloudQuery,
-  onlyUpdateForKeys(['reservations']),
 )
 
 const AllReservations = withReservationsData(({ reservations }: Reservation) => 

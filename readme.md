@@ -24,11 +24,11 @@ yarn dev:ios
 
 Core business logic (including GraphQL types and Flow types). Can be imported by both server and client code.
 
-#### reservr-gateway
+#### reservr-cloud-gateway
 
 Server endpoint. Currently has REST and GraphQL endpoints. Later could be abstracted to microservices.
 
-#### reservr-repository
+#### reservr-cloud-repository
 
 Database. Currently made with Sequelize.
 
@@ -70,9 +70,11 @@ The following progress list items potentially needed to release MVP to Test User
 - [x] Decouple Core Components to Separate Modules
 - [x] Reservations Results Screen
 - [x] Add Reservation Screen
-- [ ] Add Reservations Update DB and UI
+- [x] Add Reservations Updates DB
+- [x] Add Reservations Updates UI
 - [ ] Transition Animations
 - [ ] Brand Assets Update
+- [ ] Add more in depth state management (Redux/RxJS)
 - [ ] Add Tests
 - [ ] Add more error handling
 - [ ] Add production logging
