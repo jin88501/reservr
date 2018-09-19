@@ -47,7 +47,16 @@ const submitForm = ({
     arrivalDate: Date.now(),
     departureDate: Date.now()
   }))
-  const mutate = graphql(mutation)
+  const mutate = graphql(gql`
+    mutation {
+      createReservation(
+        name: "test",
+        hotelName: "user",
+        arrivalDate: "1537354983301",
+        departureDate: "1537441383301"
+      )
+    }
+  `)
   mutate()
 }
 
