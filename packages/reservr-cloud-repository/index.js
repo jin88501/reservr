@@ -20,10 +20,10 @@ const Reservations = db.define('reservations', {
     type: Sequelize.STRING
   },
   arrivalDate: {
-    type: Sequelize.DATE,
+    type: Sequelize.STRING,
   },
   departureDate: {
-    type: Sequelize.DATE,
+    type: Sequelize.STRING,
   }
 });
 

@@ -21,6 +21,11 @@ const TypographyStyles = StyleSheet.create({
     fontWeight: '700',
     marginBottom: 5
   },
+  h5: {
+    fontSize: 13,
+    fontWeight: '700',
+    marginBottom: 5
+  },
   p: {
     fontSize: 16
   }
@@ -31,5 +36,6 @@ export const Text = {
   h2: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h2, ...style]}>{children}</RNText>,
   h3: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h3, ...style]}>{children}</RNText>,
   h4: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h4, ...style]}>{children.toUpperCase()}</RNText>,
+  h5: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.h5, ...style]}>{children.toUpperCase()}</RNText>,
   p: ({ style = [], children = [] }: ReusableHOCProps) => <RNText style={[TypographyStyles.p, ...style]}>{children}</RNText>,
 }

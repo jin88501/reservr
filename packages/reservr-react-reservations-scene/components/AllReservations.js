@@ -17,6 +17,7 @@ import {
   FullScreenScrollView,
   TopFormView,
   CardView,
+  EventCardView,
   LoadingView,
   Text,
   Button,
@@ -45,6 +46,11 @@ const cloudQuery = compose(
   mapProps(response => response.data)
 )
 
+const convertToDate = (unix) => {
+  const date = new Date(parseInt(unix))
+  return `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`
+} 
+
 const SearchResultCard = ({ 
   id,
   name,
@@ -52,10 +58,13 @@ const SearchResultCard = ({
   arrivalDate,
   departureDate 
 }: ReservationProps) => (
-  <CardView key={id}>
-    <Text.h3>{name}</Text.h3>
-    <Text.h3>{hotelName}</Text.h3>
-  </CardView>
+  <EventCardView 
+    key={id}
+    title={name}
+    subtitle={hotelName}
+    date1={convertToDate(arrivalDate)}
+    date2={convertToDate(departureDate)}
+  />
 )
 
 const withReservationsData = compose(
@@ -64,7 +73,7 @@ const withReservationsData = compose(
 )
 
 const AllReservations = withReservationsData(({ reservations }: Reservation) => 
-  reservations.map(SearchResultCard)
+  reservations.reverse().map(SearchResultCard)
 )
 
 export default AllReservations
