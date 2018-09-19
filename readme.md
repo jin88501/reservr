@@ -32,35 +32,54 @@ Server endpoint. Currently has REST and GraphQL endpoints. Later could be abstra
 
 Database. Currently made with Sequelize.
 
+#### reversr-react
+
+Reusable React-Native component library.
+
+#### reversr-react-reservations-scene
+
+Primary app business logic.
+
 #### ReservrReactNative
 
-React Native app with client logic.
+React Native baseline that points to scenes. This makes it easy to rebase to new version of React Native.
 
 ### Progress
 
-#### Server
+The following progress list items potentially needed to release MVP to Test Users.
+
+#### Cloud
 
 - [x] GraphQL Types
 - [x] GraphQL Endpoint
 - [x] GraphQL Resolvers
 - [x] REST Endpoint
 - [x] Sequelize Database
+- [ ] Add tests
+- [ ] Add data validation for REST
+- [ ] Add more error handling
+- [ ] Add production logging
 
-### React Native
+### App
 
 - [x] iOS Support
-- [ ] Android Support
+- [x] Android Support
 - [x] Apollo Client
 - [x] Recompose Integration (for functional state management)
 - [x] Flow Types
+- [x] Decouple Core Components to Separate Modules
 - [x] Reservations Results Screen
 - [x] Add Reservation Screen
 - [ ] Add Reservations Update DB and UI
-- [x] Decouple Core Components to Separate Modules
 - [ ] Transition Animations
 - [ ] Brand Assets Update
+- [ ] Add Tests
+- [ ] Add more error handling
+- [ ] Add production logging
 
 #### Chores
 
 - [x] Monorepo Setup With React Native + Node
 - [ ] Update Docs
+- [ ] Add CICD process (fastlane?)
+- [ ] Publish to TestFlight/HockeyKit for Test Users
