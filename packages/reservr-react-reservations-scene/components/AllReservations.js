@@ -48,7 +48,7 @@ const cloudQuery = compose(
 
 const convertToDate = (unix) => {
   const date = new Date(parseInt(unix))
-  return `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`
+  return `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`
 } 
 
 const SearchResultCard = ({ 

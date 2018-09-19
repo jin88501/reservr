@@ -47,8 +47,8 @@ const submitForm = ({
     arrivalDate: Date.now(),
     departureDate: Date.now()
   }))
-  graphql(mutation)
-  console.log(mutation)
+  const mutate = graphql(mutation)
+  mutate()
 }
 
 const withFormEvents = compose(
