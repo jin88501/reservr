@@ -57,11 +57,11 @@ React Native app with client logic.
 - [x] Flow Types
 - [x] Reservations Results Screen
 - [ ] Reservation Submission Screen
+- [ ] Decouple Core Components to Separate Module
 - [ ] Transition Animations
 - [ ] Styling Updates
 - [ ] Brand Assets Update
-- [ ] Decouple Core Components to Separate Module
 
 #### DevOps
 
-- [] Monorepo Setup With React Native + Node
+- [x] Monorepo Setup With React Native + Node

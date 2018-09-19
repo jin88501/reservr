@@ -1,0 +1,10 @@
+{
+  "name": "reservr-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-native": "^0.57.0"
+  }
+}

@@ -10,10 +10,12 @@ import React, {Component} from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
-import ReservationsViewer from './ReservationsViewer/ReservationsViewer'
+import { GraphQLUrl } from './config'
+
+import ReservationsViewer from './components/ReservationsViewer'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: GraphQLUrl
 });
 
 type Props = {};

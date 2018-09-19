@@ -1,5 +1,5 @@
 import "./global-shim";
 import { AppRegistry } from "react-native";
-import App from "./js/App";
+import App from "./App";
 
 AppRegistry.registerComponent("ReservrReactNative", () => App);

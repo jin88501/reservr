@@ -1,22 +1,26 @@
 {
-  "name": "ReservrReactNative",
+  "name": "reservr-reservations-scene",
   "version": "0.0.1",
   "private": true,
+  "main": "index.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "postinstall": "react-native link"
+    "test": "jest"
   },
   "dependencies": {
-    "react": "16.2.0",
-    "react-native": "0.52.2",
+    "apollo-boost": "^0.1.16",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.9.2",
+    "react-apollo": "^2.1.11",
+    "recompose": "^0.30.0"
+  },
+  "peerDependencies": {
     "reservr-domain": "1.0.0",
     "reservr-react": "^1.0.0",
-    "reservr-reservations-scene": "^0.0.1"
+    "react": "16.2.0",
+    "react-native": "0.52.2"
   },
   "devDependencies": {
-    "babel-jest": "22.1.0",
-    "babel-preset-react-native": "4.0.0",
     "jest": "22.1.4",
     "react-test-renderer": "16.2.0"
   },

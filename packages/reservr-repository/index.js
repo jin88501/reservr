@@ -33,7 +33,7 @@ db.sync({ force: true }).then(()=> {
       .create(createReservation())
       .then(result => result.dataValues.id)
       .catch(e => { console.error('mock data population failed') })
-  }, 10);
+  }, 30);
 });
 
 module.exports = { 
