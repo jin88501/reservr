@@ -88,6 +88,7 @@ The following progress list items potentially needed to release MVP to Test User
 - [x] Add Reservations Updates DB
 - [x] Add Reservations Updates UI
 - [ ] Transition Animations
+- [ ] Add more native components with `native-base`
 - [ ] Brand Assets Update
 - [ ] Add more in depth state management (Redux/RxJS)
 - [ ] Add Tests
