@@ -2,11 +2,25 @@
   "private": true,
   "repository": "git@github.com:sartaj/reservr.git",
   "scripts": {
-    "gateway": "cd packages/reservr-gateway && yarn start"
+    "gateway": "cd packages/reservr-gateway && yarn start",
+    "run:ios": "cd packages/ReservrReactNative && react-native run-ios",
+    "reset-modules": "rm -rf node_modules/ yarn.lock packages/*/node_modules",
+    "reset-yarn": "yarn cache clean",
+    "reset-rn": "watchman watch-del-all; rm -fr $TMPDIR/react-*; rm -rf $TMPDIR/haste-map-react-native-packager-*",
+    "reset-cache": "yarn reset-yarn && yarn reset-rn",
+    "reset": "yarn reset-modules && yarn reset-cache"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "react-cipher/react-scripts",
+      "**/reservr-domain",
+      "ReservrReactNative/react-native-*",
+      "ReservrReactNative/react-native-*/**"
+    ]
+  },
   "devDependencies": {
     "lerna": "^2.5.1"
   }

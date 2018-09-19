@@ -1,0 +1,29 @@
+{
+  "name": "ReservrReactNative",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "postinstall": "react-native link"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.1.16",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.9.2",
+    "react": "16.2.0",
+    "react-apollo": "^2.1.11",
+    "react-native": "0.52.2",
+    "recompose": "^0.30.0",
+    "reservr-domain": "1.0.0"
+  },
+  "devDependencies": {
+    "babel-jest": "22.1.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.1.4",
+    "react-test-renderer": "16.2.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
