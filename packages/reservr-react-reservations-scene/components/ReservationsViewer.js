@@ -1,11 +1,11 @@
 /* @flow */
 
-import React, {Component} from 'react';
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
-import { compose, pure, branch, renderComponent, mapProps } from 'recompose';
+import React, {Component} from 'react'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
+import { compose, branch, renderComponent, mapProps, onlyUpdateForKeys } from 'recompose'
 
-import { FullScreenScrollView, CardView, Loading, Text } from 'reservr-react';
+import { FullScreenScrollView, CardView, LoadingView, Text, onError } from 'reservr-react'
 import type { Reservation } from 'reservr-domain/entities/reservations/types.flow'
 
 const cloudQuery = compose(
@@ -20,10 +20,21 @@ const cloudQuery = compose(
       }
     }
   `),
-  mapProps(response => response.data),
-);
+  onError('Network request failed.'),
+  branch(
+    props => props.data.loading,
+    renderComponent(LoadingView),
+  ),
+  mapProps(response => response.data)
+)
 
-const SearchResultCard = ({ id, name, hotelName, arrivalDate, departureDate }: ReservationProps) => (
+const SearchResultCard = ({ 
+  id,
+  name,
+  hotelName,
+  arrivalDate,
+  departureDate 
+}: ReservationProps) => (
   <CardView key={id}>
     <Text.h3>{name}</Text.h3>
     <Text.h3>{hotelName}</Text.h3>
@@ -37,12 +48,8 @@ const SearchResults = ({ loading, reservations }: Reservation) =>
 
 const ReservationsViewer = compose(
   cloudQuery,
-  branch(
-    props => props.loading,
-    renderComponent(Loading),
-  ),
-  pure,
-)(SearchResults);
+  onlyUpdateForKeys(['reservations']),
+)(SearchResults)
 
 export default ReservationsViewer
 
