@@ -2,16 +2,19 @@
 
 import React from 'react';
 import { StatusBar, StyleSheet, View, ScrollView, Dimensions } from 'react-native';
-import { Text } from '../Typography'
+import Brand from 'reservr-domain/brand/ReactNative'
 
+import { Text } from '../Typography'
 import type { ReusableHOCProps } from '../types'
+
+const TOP_MOBILE_TOOLBAR_HEIGHT = 25
 
 const styles = StyleSheet.create({
   FullScreenViewContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.06)',
+    backgroundColor: Brand.Skin.bgGray,
     margin: 0,
     width: Dimensions.get('window').width,
   },
@@ -23,32 +26,32 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    padding: 10,
-    marginLeft: 15,
-    marginRight: 15,
-    marginBottom: 10,
+    padding: Brand.Structure.Spacing2,
+    marginLeft: Brand.Structure.Spacing3,
+    marginRight: Brand.Structure.Spacing3,
+    marginBottom: Brand.Structure.Spacing2,
     height: 65,
-    backgroundColor: 'rgba(255,255,255, 1.0)'
+    backgroundColor: Brand.Skin.bgWhite
   },
   TransparentCard: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    padding: 10,
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 10
+    padding: Brand.Structure.Spacing2,
+    marginLeft: Brand.Structure.Spacing2,
+    marginRight: Brand.Structure.Spacing2,
+    marginBottom: Brand.Structure.Spacing2
   },
   TopFormContainer: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 25,
-    paddingBottom: 10,
-    marginBottom: 10,
+    paddingLeft: Brand.Structure.Spacing2,
+    paddingRight: Brand.Structure.Spacing2,
+    paddingTop: TOP_MOBILE_TOOLBAR_HEIGHT,
+    paddingBottom: Brand.Structure.Spacing2,
+    marginBottom: Brand.Structure.Spacing2,
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-around',
-    backgroundColor: 'rgba(15,53,100,0.9)'
+    backgroundColor: Brand.Skin.bgBlue
   }
 });
 
